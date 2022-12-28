@@ -1,0 +1,133 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-11-24T13:45:38.700Z",
+    "end": "2022-11-24T13:46:04.515Z",
+    "duration": 25815,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5bdaa81f-04fe-470c-8ec3-2a0713e6b784",
+      "title": "",
+      "fullFile": "cypress/e2e/04.multipleFilters.cy.js",
+      "file": "cypress/e2e/04.multipleFilters.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7d3dbf9a-fc00-4064-9a3a-df4bffc22cd8",
+          "title": "4 - Implemente múltiplos filtros numéricos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adicione dois filtros e verifique se a tabela foi atualizada com as informações filtradas",
+              "fullTitle": "4 - Implemente múltiplos filtros numéricos Adicione dois filtros e verifique se a tabela foi atualizada com as informações filtradas",
+              "timedOut": null,
+              "duration": 11685,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('table tr').should('have.length', ROWS_TOTAL);\ncy.addFilter('diameter', 'maior que', '9000');\ncy.get('table tr').should('have.length', FILTERED_ROWS);\ncy.addFilter('population', 'menor que', '1000000');\ncy.get('table tr').should('have.length', DOUBLE_FILTERED_ROWS);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Not enough elements found. Found '2', expected '8'.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Not enough elements found. Found '2', expected '8'.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/e2e/04.multipleFilters.cy.js:139:24)",
+                "diff": "- 2\n+ 8\n"
+              },
+              "uuid": "9f3c070a-9c18-4fc5-9681-223bd6204bae",
+              "parentUUID": "7d3dbf9a-fc00-4064-9a3a-df4bffc22cd8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicione três filtros e verifique se a tabela foi atualizada com as informações filtradas",
+              "fullTitle": "4 - Implemente múltiplos filtros numéricos Adicione três filtros e verifique se a tabela foi atualizada com as informações filtradas",
+              "timedOut": null,
+              "duration": 11146,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('table tr').should('have.length', ROWS_TOTAL);\ncy.addFilter('diameter', 'maior que', '9000');\ncy.get('table tr').should('have.length', FILTERED_ROWS);\ncy.addFilter('population', 'menor que', '1000000');\ncy.get('table tr').should('have.length', DOUBLE_FILTERED_ROWS);\ncy.addFilter('rotation_period', 'igual a', '23');\ncy.get('table tr').should('have.length', TRIPLE_FILTERED_ROWS);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Not enough elements found. Found '2', expected '8'.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Not enough elements found. Found '2', expected '8'.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/e2e/04.multipleFilters.cy.js:146:24)",
+                "diff": "- 2\n+ 8\n"
+              },
+              "uuid": "13fa46a6-66e1-4163-8705-1e3d65a61e5d",
+              "parentUUID": "7d3dbf9a-fc00-4064-9a3a-df4bffc22cd8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "9f3c070a-9c18-4fc5-9681-223bd6204bae",
+            "13fa46a6-66e1-4163-8705-1e3d65a61e5d"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22831,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

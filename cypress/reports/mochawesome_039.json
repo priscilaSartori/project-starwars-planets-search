@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-12-27T18:37:11.615Z",
+    "end": "2022-12-27T18:37:21.629Z",
+    "duration": 10014,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b463e685-ab5b-428f-bce8-b17f057638a6",
+      "title": "",
+      "fullFile": "cypress/e2e/07.deleteFilters.cy.js",
+      "file": "cypress/e2e/07.deleteFilters.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4139190c-6992-472c-9971-b75284ea8c3c",
+          "title": "7 - Apague um filtro de valor numérico ao clicar no ícone de X de um dos filtros e apague todas filtragens numéricas simultaneamente ao clicar em outro botão de Remover todas filtragens",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Adicione um filtro e verifique se a tabela foi atualizada com as informações filtradas, depois remova o filtro e verifique se os valores da tabela voltaram ao original",
+              "fullTitle": "7 - Apague um filtro de valor numérico ao clicar no ícone de X de um dos filtros e apague todas filtragens numéricas simultaneamente ao clicar em outro botão de Remover todas filtragens Adicione um filtro e verifique se a tabela foi atualizada com as informações filtradas, depois remova o filtro e verifique se os valores da tabela voltaram ao original",
+              "timedOut": null,
+              "duration": 1869,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('table tr').should('have.length', TOTAL_ROWS_COUNT);\ncy.addFilter('diameter', 'maior que', '8900');\ncy.get('table tr').should('have.length', FILTERED_ROWS_COUNT);\nremoveFilter(DIAMETER_FILTER_INDEX);\ncy.get('table tr').should('have.length', TOTAL_ROWS_COUNT);",
+              "err": {},
+              "uuid": "e7dee9d1-e194-490b-b7ef-36509c736ce7",
+              "parentUUID": "4139190c-6992-472c-9971-b75284ea8c3c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicione dois filtros e verifique se a tabela foi atualizada com as informações filtradas, depois remova os filtros e verifique se os valores da tabela voltaram ao original",
+              "fullTitle": "7 - Apague um filtro de valor numérico ao clicar no ícone de X de um dos filtros e apague todas filtragens numéricas simultaneamente ao clicar em outro botão de Remover todas filtragens Adicione dois filtros e verifique se a tabela foi atualizada com as informações filtradas, depois remova os filtros e verifique se os valores da tabela voltaram ao original",
+              "timedOut": null,
+              "duration": 2528,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('table tr').should('have.length', TOTAL_ROWS_COUNT);\ncy.addFilter('diameter', 'maior que', '8900');\ncy.addFilter('population', 'menor que', '1000000');\ncy.get('table tr').should('have.length', DOUBLE_FILTERED);\nremoveFilter(POPULATION_FILTER_INDEX);\ncy.get('table tr').should('have.length', FILTERED_ROWS_COUNT);\nremoveFilter(DIAMETER_FILTER_INDEX);\ncy.get('table tr').should('have.length', TOTAL_ROWS_COUNT);",
+              "err": {},
+              "uuid": "56ce16bb-624d-4878-8f0a-207362995e14",
+              "parentUUID": "4139190c-6992-472c-9971-b75284ea8c3c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adicione três filtros e clique no botão Remover Filtragens, todos os filtros deverão ser removidos",
+              "fullTitle": "7 - Apague um filtro de valor numérico ao clicar no ícone de X de um dos filtros e apague todas filtragens numéricas simultaneamente ao clicar em outro botão de Remover todas filtragens Adicione três filtros e clique no botão Remover Filtragens, todos os filtros deverão ser removidos",
+              "timedOut": null,
+              "duration": 2931,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('table tr').should('have.length', TOTAL_ROWS_COUNT);\ncy.addFilter('diameter', 'maior que', '8900');\ncy.addFilter('population', 'menor que', '1000000');\ncy.addFilter('rotation_period', 'igual a', '23');\ncy.get('table tr').should('have.length', TRIPLE_FILTERED);\ncy.getByTestId(_dataTestIds.BUTTON_REMOVE_FILTERS).click();\ncy.get('table tr').should('have.length', TOTAL_ROWS_COUNT);",
+              "err": {},
+              "uuid": "1d591cbe-e201-4bdd-aa98-e82ea41d4366",
+              "parentUUID": "4139190c-6992-472c-9971-b75284ea8c3c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7dee9d1-e194-490b-b7ef-36509c736ce7",
+            "56ce16bb-624d-4878-8f0a-207362995e14",
+            "1d591cbe-e201-4bdd-aa98-e82ea41d4366"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7328,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

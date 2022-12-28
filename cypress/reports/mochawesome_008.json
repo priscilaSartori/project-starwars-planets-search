@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-11-24T13:48:01.716Z",
+    "end": "2022-11-24T13:48:17.495Z",
+    "duration": 15779,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "13bc6826-57c8-47f0-be0e-e3b2cb920b1d",
+      "title": "",
+      "fullFile": "cypress/e2e/06.repeatedFilters.cy.js",
+      "file": "cypress/e2e/06.repeatedFilters.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cab008af-6835-4205-bdc8-db58244f0abe",
+          "title": "6 - Não utilize filtros repetidos",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Filtre por população e o remove das opções",
+              "fullTitle": "6 - Não utilize filtros repetidos Filtre por população e o remove das opções",
+              "timedOut": null,
+              "duration": 12845,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const allColumnsOptions = ['population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water'];\ncy.getByTestId(_dataTestIds.COLUMN_FILTER).find('option').should(options => {\n  expect(options).to.have.length(allColumnsOptions.length);\n  allColumnsOptions.forEach(option => {\n    expect(options).to.contain(option);\n  });\n});\ncy.addFilter('population', 'maior que', '8000');\ncy.get('table tr').should('have.length', FILTERED_ROWS_COUNT);\ncy.getByTestId(_dataTestIds.COLUMN_FILTER).find('option').should(options => {\n  expect(options).to.have.length(allColumnsOptions.length - 1);\n  expect(options).to.not.contain('population');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Too many elements found. Found '5', expected '4'.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Too many elements found. Found '5', expected '4'.\n    at Context.eval (http://localhost:3000/__cypress/tests?p=cypress/e2e/06.repeatedFilters.cy.js:144:31)",
+                "diff": "- 5\n+ 4\n"
+              },
+              "uuid": "f0e70556-f80a-4e9d-8216-613bf69d4554",
+              "parentUUID": "cab008af-6835-4205-bdc8-db58244f0abe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f0e70556-f80a-4e9d-8216-613bf69d4554"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12845,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
